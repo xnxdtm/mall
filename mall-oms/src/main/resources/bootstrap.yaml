@@ -1,0 +1,16 @@
+server:
+  port: 8090
+spring:
+  profiles:
+    active: dev
+  application:
+    name: mall-oms
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.43.200:8848
+      config:
+        server-addr: 192.168.43.200:8848
+        file-extension: yaml
+        namespace: c3a5f5df-54e7-4439-8012-1233048b5edd
+

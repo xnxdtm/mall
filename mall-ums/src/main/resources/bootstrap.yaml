@@ -1,0 +1,13 @@
+server:
+  port: 8093
+spring:
+  application:
+    name: mall-ums
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.43.200:8848
+      config:
+        server-addr: 192.168.43.200:8848

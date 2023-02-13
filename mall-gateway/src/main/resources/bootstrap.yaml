@@ -1,0 +1,16 @@
+server:
+  port: 8095
+spring:
+  profiles:
+    active: dev
+  application:
+    name: mall-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.43.200:8848
+      config:
+        server-addr: 192.168.43.200:8848
+        file-extension: yaml
+        namespace: 0a11c135-e89a-42c9-aa78-eb634b435549
+
