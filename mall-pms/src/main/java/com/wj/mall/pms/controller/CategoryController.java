@@ -1,20 +1,16 @@
 package com.wj.mall.pms.controller;
 
-import java.util.Arrays;
-import java.util.Map;
-
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.wj.mall.pms.entity.CategoryEntity;
-import com.wj.mall.pms.service.CategoryService;
 import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.R;
+import com.wj.mall.pms.entity.CategoryEntity;
+import com.wj.mall.pms.service.CategoryService;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 
 
@@ -85,6 +81,12 @@ public class CategoryController {
 		categoryService.removeByIds(Arrays.asList(catIds));
 
         return R.ok();
+    }
+
+    @GetMapping("/queryCategoryWithTree")
+    public R queryCategoryWithTree() {
+        List<CategoryEntity> category = categoryService.queryCategoryWithTree();
+        return R.ok().put("list", category);
     }
 
 }
