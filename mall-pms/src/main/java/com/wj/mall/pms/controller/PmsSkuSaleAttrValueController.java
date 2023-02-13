@@ -2,7 +2,7 @@ package com.wj.mall.pms.controller;
 
 import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.R;
-import com.wj.mall.pms.entity.PmsSkuSaleAttrValueEntity;
+import com.wj.mall.pms.entity.SkuSaleAttrValueEntity;
 import com.wj.mall.pms.service.PmsSkuSaleAttrValueService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +44,7 @@ public class PmsSkuSaleAttrValueController {
     @RequestMapping("/info/{id}")
     @RequiresPermissions("pms:pmsskusaleattrvalue:info")
     public R info(@PathVariable("id") Long id){
-		PmsSkuSaleAttrValueEntity pmsSkuSaleAttrValue = pmsSkuSaleAttrValueService.getById(id);
+		SkuSaleAttrValueEntity pmsSkuSaleAttrValue = pmsSkuSaleAttrValueService.getById(id);
 
         return R.ok().put("pmsSkuSaleAttrValue", pmsSkuSaleAttrValue);
     }
@@ -54,7 +54,7 @@ public class PmsSkuSaleAttrValueController {
      */
     @RequestMapping("/save")
     @RequiresPermissions("pms:pmsskusaleattrvalue:save")
-    public R save(@RequestBody PmsSkuSaleAttrValueEntity pmsSkuSaleAttrValue){
+    public R save(@RequestBody SkuSaleAttrValueEntity pmsSkuSaleAttrValue){
 		pmsSkuSaleAttrValueService.save(pmsSkuSaleAttrValue);
 
         return R.ok();
@@ -65,7 +65,7 @@ public class PmsSkuSaleAttrValueController {
      */
     @RequestMapping("/update")
     @RequiresPermissions("pms:pmsskusaleattrvalue:update")
-    public R update(@RequestBody PmsSkuSaleAttrValueEntity pmsSkuSaleAttrValue){
+    public R update(@RequestBody SkuSaleAttrValueEntity pmsSkuSaleAttrValue){
 		pmsSkuSaleAttrValueService.updateById(pmsSkuSaleAttrValue);
 
         return R.ok();

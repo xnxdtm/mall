@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wj.mall.pms.entity.PmsCategoryBrandRelationEntity;
+import com.wj.mall.pms.entity.CategoryBrandRelationEntity;
 import com.wj.mall.pms.service.PmsCategoryBrandRelationService;
 import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.R;
@@ -49,7 +49,7 @@ public class PmsCategoryBrandRelationController {
     @RequestMapping("/info/{id}")
     @RequiresPermissions("pms:pmscategorybrandrelation:info")
     public R info(@PathVariable("id") Long id){
-		PmsCategoryBrandRelationEntity pmsCategoryBrandRelation = pmsCategoryBrandRelationService.getById(id);
+		CategoryBrandRelationEntity pmsCategoryBrandRelation = pmsCategoryBrandRelationService.getById(id);
 
         return R.ok().put("pmsCategoryBrandRelation", pmsCategoryBrandRelation);
     }
@@ -59,7 +59,7 @@ public class PmsCategoryBrandRelationController {
      */
     @RequestMapping("/save")
     @RequiresPermissions("pms:pmscategorybrandrelation:save")
-    public R save(@RequestBody PmsCategoryBrandRelationEntity pmsCategoryBrandRelation){
+    public R save(@RequestBody CategoryBrandRelationEntity pmsCategoryBrandRelation){
 		pmsCategoryBrandRelationService.save(pmsCategoryBrandRelation);
 
         return R.ok();
@@ -70,7 +70,7 @@ public class PmsCategoryBrandRelationController {
      */
     @RequestMapping("/update")
     @RequiresPermissions("pms:pmscategorybrandrelation:update")
-    public R update(@RequestBody PmsCategoryBrandRelationEntity pmsCategoryBrandRelation){
+    public R update(@RequestBody CategoryBrandRelationEntity pmsCategoryBrandRelation){
 		pmsCategoryBrandRelationService.updateById(pmsCategoryBrandRelation);
 
         return R.ok();

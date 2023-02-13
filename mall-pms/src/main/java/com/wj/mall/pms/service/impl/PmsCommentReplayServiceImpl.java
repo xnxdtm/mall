@@ -9,18 +9,18 @@ import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.Query;
 
 import com.wj.mall.pms.dao.PmsCommentReplayDao;
-import com.wj.mall.pms.entity.PmsCommentReplayEntity;
+import com.wj.mall.pms.entity.CommentReplayEntity;
 import com.wj.mall.pms.service.PmsCommentReplayService;
 
 
 @Service("pmsCommentReplayService")
-public class PmsCommentReplayServiceImpl extends ServiceImpl<PmsCommentReplayDao, PmsCommentReplayEntity> implements PmsCommentReplayService {
+public class PmsCommentReplayServiceImpl extends ServiceImpl<PmsCommentReplayDao, CommentReplayEntity> implements PmsCommentReplayService {
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        IPage<PmsCommentReplayEntity> page = this.page(
-                new Query<PmsCommentReplayEntity>().getPage(params),
-                new QueryWrapper<PmsCommentReplayEntity>()
+        IPage<CommentReplayEntity> page = this.page(
+                new Query<CommentReplayEntity>().getPage(params),
+                new QueryWrapper<CommentReplayEntity>()
         );
 
         return new PageUtils(page);

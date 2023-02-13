@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wj.mall.pms.entity.PmsCategoryEntity;
+import com.wj.mall.pms.entity.CategoryEntity;
 import com.wj.mall.pms.service.PmsCategoryService;
 import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.R;
@@ -49,7 +49,7 @@ public class PmsCategoryController {
     @RequestMapping("/info/{catId}")
     @RequiresPermissions("pms:pmscategory:info")
     public R info(@PathVariable("catId") Long catId){
-		PmsCategoryEntity pmsCategory = pmsCategoryService.getById(catId);
+		CategoryEntity pmsCategory = pmsCategoryService.getById(catId);
 
         return R.ok().put("pmsCategory", pmsCategory);
     }
@@ -59,7 +59,7 @@ public class PmsCategoryController {
      */
     @RequestMapping("/save")
     @RequiresPermissions("pms:pmscategory:save")
-    public R save(@RequestBody PmsCategoryEntity pmsCategory){
+    public R save(@RequestBody CategoryEntity pmsCategory){
 		pmsCategoryService.save(pmsCategory);
 
         return R.ok();
@@ -70,7 +70,7 @@ public class PmsCategoryController {
      */
     @RequestMapping("/update")
     @RequiresPermissions("pms:pmscategory:update")
-    public R update(@RequestBody PmsCategoryEntity pmsCategory){
+    public R update(@RequestBody CategoryEntity pmsCategory){
 		pmsCategoryService.updateById(pmsCategory);
 
         return R.ok();

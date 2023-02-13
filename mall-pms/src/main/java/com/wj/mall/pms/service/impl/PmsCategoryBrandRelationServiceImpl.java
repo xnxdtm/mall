@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.Query;
 import com.wj.mall.pms.dao.PmsCategoryBrandRelationDao;
-import com.wj.mall.pms.entity.PmsCategoryBrandRelationEntity;
+import com.wj.mall.pms.entity.CategoryBrandRelationEntity;
 import com.wj.mall.pms.service.PmsCategoryBrandRelationService;
 import org.springframework.stereotype.Service;
 
@@ -14,13 +14,13 @@ import java.util.Map;
 
 
 @Service("pmsCategoryBrandRelationService")
-public class PmsCategoryBrandRelationServiceImpl extends ServiceImpl<PmsCategoryBrandRelationDao, PmsCategoryBrandRelationEntity> implements PmsCategoryBrandRelationService {
+public class PmsCategoryBrandRelationServiceImpl extends ServiceImpl<PmsCategoryBrandRelationDao, CategoryBrandRelationEntity> implements PmsCategoryBrandRelationService {
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        IPage<PmsCategoryBrandRelationEntity> page = this.page(
-                new Query<PmsCategoryBrandRelationEntity>().getPage(params),
-                new QueryWrapper<PmsCategoryBrandRelationEntity>()
+        IPage<CategoryBrandRelationEntity> page = this.page(
+                new Query<CategoryBrandRelationEntity>().getPage(params),
+                new QueryWrapper<CategoryBrandRelationEntity>()
         );
 
         return new PageUtils(page);

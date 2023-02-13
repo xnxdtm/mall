@@ -9,18 +9,18 @@ import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.Query;
 
 import com.wj.mall.pms.dao.PmsSpuCommentDao;
-import com.wj.mall.pms.entity.PmsSpuCommentEntity;
+import com.wj.mall.pms.entity.SpuCommentEntity;
 import com.wj.mall.pms.service.PmsSpuCommentService;
 
 
 @Service("pmsSpuCommentService")
-public class PmsSpuCommentServiceImpl extends ServiceImpl<PmsSpuCommentDao, PmsSpuCommentEntity> implements PmsSpuCommentService {
+public class PmsSpuCommentServiceImpl extends ServiceImpl<PmsSpuCommentDao, SpuCommentEntity> implements PmsSpuCommentService {
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        IPage<PmsSpuCommentEntity> page = this.page(
-                new Query<PmsSpuCommentEntity>().getPage(params),
-                new QueryWrapper<PmsSpuCommentEntity>()
+        IPage<SpuCommentEntity> page = this.page(
+                new Query<SpuCommentEntity>().getPage(params),
+                new QueryWrapper<SpuCommentEntity>()
         );
 
         return new PageUtils(page);

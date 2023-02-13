@@ -9,18 +9,18 @@ import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.Query;
 
 import com.wj.mall.pms.dao.PmsSpuInfoDao;
-import com.wj.mall.pms.entity.PmsSpuInfoEntity;
+import com.wj.mall.pms.entity.SpuInfoEntity;
 import com.wj.mall.pms.service.PmsSpuInfoService;
 
 
 @Service("pmsSpuInfoService")
-public class PmsSpuInfoServiceImpl extends ServiceImpl<PmsSpuInfoDao, PmsSpuInfoEntity> implements PmsSpuInfoService {
+public class PmsSpuInfoServiceImpl extends ServiceImpl<PmsSpuInfoDao, SpuInfoEntity> implements PmsSpuInfoService {
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        IPage<PmsSpuInfoEntity> page = this.page(
-                new Query<PmsSpuInfoEntity>().getPage(params),
-                new QueryWrapper<PmsSpuInfoEntity>()
+        IPage<SpuInfoEntity> page = this.page(
+                new Query<SpuInfoEntity>().getPage(params),
+                new QueryWrapper<SpuInfoEntity>()
         );
 
         return new PageUtils(page);

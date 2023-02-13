@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.Query;
 import com.wj.mall.pms.dao.PmsAttrGroupDao;
-import com.wj.mall.pms.entity.PmsAttrGroupEntity;
+import com.wj.mall.pms.entity.AttrGroupEntity;
 import com.wj.mall.pms.service.PmsAttrGroupService;
 import org.springframework.stereotype.Service;
 
@@ -14,13 +14,13 @@ import java.util.Map;
 
 
 @Service("pmsAttrGroupService")
-public class PmsAttrGroupServiceImpl extends ServiceImpl<PmsAttrGroupDao, PmsAttrGroupEntity> implements PmsAttrGroupService {
+public class PmsAttrGroupServiceImpl extends ServiceImpl<PmsAttrGroupDao, AttrGroupEntity> implements PmsAttrGroupService {
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        IPage<PmsAttrGroupEntity> page = this.page(
-                new Query<PmsAttrGroupEntity>().getPage(params),
-                new QueryWrapper<PmsAttrGroupEntity>()
+        IPage<AttrGroupEntity> page = this.page(
+                new Query<AttrGroupEntity>().getPage(params),
+                new QueryWrapper<AttrGroupEntity>()
         );
 
         return new PageUtils(page);

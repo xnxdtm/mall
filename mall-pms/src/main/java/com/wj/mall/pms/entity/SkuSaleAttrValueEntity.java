@@ -4,41 +4,45 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
-import java.util.Date;
+
 import lombok.Data;
 
 /**
- * 品牌分类关联
+ * sku销售属性&值
  * 
  * @author wj
  * @email xnxdtm@gmail.com
- * @date 2023-02-10 19:52:57
+ * @date 2023-02-10 19:52:52
  */
 @Data
-@TableName("pms_category_brand_relation")
-public class PmsCategoryBrandRelationEntity implements Serializable {
+@TableName("pms_sku_sale_attr_value")
+public class SkuSaleAttrValueEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * 
+	 * id
 	 */
 	@TableId
 	private Long id;
 	/**
-	 * 品牌id
+	 * sku_id
 	 */
-	private Long brandId;
+	private Long skuId;
 	/**
-	 * 分类id
+	 * attr_id
 	 */
-	private Long catelogId;
+	private Long attrId;
 	/**
-	 * 
+	 * 销售属性名
 	 */
-	private String brandName;
+	private String attrName;
 	/**
-	 * 
+	 * 销售属性值
 	 */
-	private String catelogName;
+	private String attrValue;
+	/**
+	 * 顺序
+	 */
+	private Integer attrSort;
 
 }

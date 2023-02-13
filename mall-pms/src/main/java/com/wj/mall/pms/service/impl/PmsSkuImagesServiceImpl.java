@@ -9,18 +9,18 @@ import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.Query;
 
 import com.wj.mall.pms.dao.PmsSkuImagesDao;
-import com.wj.mall.pms.entity.PmsSkuImagesEntity;
+import com.wj.mall.pms.entity.SkuImagesEntity;
 import com.wj.mall.pms.service.PmsSkuImagesService;
 
 
 @Service("pmsSkuImagesService")
-public class PmsSkuImagesServiceImpl extends ServiceImpl<PmsSkuImagesDao, PmsSkuImagesEntity> implements PmsSkuImagesService {
+public class PmsSkuImagesServiceImpl extends ServiceImpl<PmsSkuImagesDao, SkuImagesEntity> implements PmsSkuImagesService {
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        IPage<PmsSkuImagesEntity> page = this.page(
-                new Query<PmsSkuImagesEntity>().getPage(params),
-                new QueryWrapper<PmsSkuImagesEntity>()
+        IPage<SkuImagesEntity> page = this.page(
+                new Query<SkuImagesEntity>().getPage(params),
+                new QueryWrapper<SkuImagesEntity>()
         );
 
         return new PageUtils(page);

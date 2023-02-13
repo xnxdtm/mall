@@ -2,7 +2,7 @@ package com.wj.mall.pms.controller;
 
 import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.R;
-import com.wj.mall.pms.entity.PmsAttrAttrgroupRelationEntity;
+import com.wj.mall.pms.entity.AttrAttrgroupRelationEntity;
 import com.wj.mall.pms.service.PmsAttrAttrgroupRelationService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +44,7 @@ public class PmsAttrAttrgroupRelationController {
     @RequestMapping("/info/{id}")
     @RequiresPermissions("pms:pmsattrattrgrouprelation:info")
     public R info(@PathVariable("id") Long id){
-		PmsAttrAttrgroupRelationEntity pmsAttrAttrgroupRelation = pmsAttrAttrgroupRelationService.getById(id);
+		AttrAttrgroupRelationEntity pmsAttrAttrgroupRelation = pmsAttrAttrgroupRelationService.getById(id);
 
         return R.ok().put("pmsAttrAttrgroupRelation", pmsAttrAttrgroupRelation);
     }
@@ -54,7 +54,7 @@ public class PmsAttrAttrgroupRelationController {
      */
     @RequestMapping("/save")
     @RequiresPermissions("pms:pmsattrattrgrouprelation:save")
-    public R save(@RequestBody PmsAttrAttrgroupRelationEntity pmsAttrAttrgroupRelation){
+    public R save(@RequestBody AttrAttrgroupRelationEntity pmsAttrAttrgroupRelation){
 		pmsAttrAttrgroupRelationService.save(pmsAttrAttrgroupRelation);
 
         return R.ok();
@@ -65,7 +65,7 @@ public class PmsAttrAttrgroupRelationController {
      */
     @RequestMapping("/update")
     @RequiresPermissions("pms:pmsattrattrgrouprelation:update")
-    public R update(@RequestBody PmsAttrAttrgroupRelationEntity pmsAttrAttrgroupRelation){
+    public R update(@RequestBody AttrAttrgroupRelationEntity pmsAttrAttrgroupRelation){
 		pmsAttrAttrgroupRelationService.updateById(pmsAttrAttrgroupRelation);
 
         return R.ok();

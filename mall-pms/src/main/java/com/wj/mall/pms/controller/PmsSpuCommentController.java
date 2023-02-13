@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wj.mall.pms.entity.PmsSpuCommentEntity;
+import com.wj.mall.pms.entity.SpuCommentEntity;
 import com.wj.mall.pms.service.PmsSpuCommentService;
 import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.R;
@@ -49,7 +49,7 @@ public class PmsSpuCommentController {
     @RequestMapping("/info/{id}")
     @RequiresPermissions("pms:pmsspucomment:info")
     public R info(@PathVariable("id") Long id){
-		PmsSpuCommentEntity pmsSpuComment = pmsSpuCommentService.getById(id);
+		SpuCommentEntity pmsSpuComment = pmsSpuCommentService.getById(id);
 
         return R.ok().put("pmsSpuComment", pmsSpuComment);
     }
@@ -59,7 +59,7 @@ public class PmsSpuCommentController {
      */
     @RequestMapping("/save")
     @RequiresPermissions("pms:pmsspucomment:save")
-    public R save(@RequestBody PmsSpuCommentEntity pmsSpuComment){
+    public R save(@RequestBody SpuCommentEntity pmsSpuComment){
 		pmsSpuCommentService.save(pmsSpuComment);
 
         return R.ok();
@@ -70,7 +70,7 @@ public class PmsSpuCommentController {
      */
     @RequestMapping("/update")
     @RequiresPermissions("pms:pmsspucomment:update")
-    public R update(@RequestBody PmsSpuCommentEntity pmsSpuComment){
+    public R update(@RequestBody SpuCommentEntity pmsSpuComment){
 		pmsSpuCommentService.updateById(pmsSpuComment);
 
         return R.ok();

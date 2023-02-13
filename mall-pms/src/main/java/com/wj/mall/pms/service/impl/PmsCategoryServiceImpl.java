@@ -9,18 +9,18 @@ import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.Query;
 
 import com.wj.mall.pms.dao.PmsCategoryDao;
-import com.wj.mall.pms.entity.PmsCategoryEntity;
+import com.wj.mall.pms.entity.CategoryEntity;
 import com.wj.mall.pms.service.PmsCategoryService;
 
 
 @Service("pmsCategoryService")
-public class PmsCategoryServiceImpl extends ServiceImpl<PmsCategoryDao, PmsCategoryEntity> implements PmsCategoryService {
+public class PmsCategoryServiceImpl extends ServiceImpl<PmsCategoryDao, CategoryEntity> implements PmsCategoryService {
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        IPage<PmsCategoryEntity> page = this.page(
-                new Query<PmsCategoryEntity>().getPage(params),
-                new QueryWrapper<PmsCategoryEntity>()
+        IPage<CategoryEntity> page = this.page(
+                new Query<CategoryEntity>().getPage(params),
+                new QueryWrapper<CategoryEntity>()
         );
 
         return new PageUtils(page);

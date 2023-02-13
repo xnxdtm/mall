@@ -2,7 +2,7 @@ package com.wj.mall.pms.controller;
 
 import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.R;
-import com.wj.mall.pms.entity.PmsCommentReplayEntity;
+import com.wj.mall.pms.entity.CommentReplayEntity;
 import com.wj.mall.pms.service.PmsCommentReplayService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +44,7 @@ public class PmsCommentReplayController {
     @RequestMapping("/info/{id}")
     @RequiresPermissions("pms:pmscommentreplay:info")
     public R info(@PathVariable("id") Long id){
-		PmsCommentReplayEntity pmsCommentReplay = pmsCommentReplayService.getById(id);
+		CommentReplayEntity pmsCommentReplay = pmsCommentReplayService.getById(id);
 
         return R.ok().put("pmsCommentReplay", pmsCommentReplay);
     }
@@ -54,7 +54,7 @@ public class PmsCommentReplayController {
      */
     @RequestMapping("/save")
     @RequiresPermissions("pms:pmscommentreplay:save")
-    public R save(@RequestBody PmsCommentReplayEntity pmsCommentReplay){
+    public R save(@RequestBody CommentReplayEntity pmsCommentReplay){
 		pmsCommentReplayService.save(pmsCommentReplay);
 
         return R.ok();
@@ -65,7 +65,7 @@ public class PmsCommentReplayController {
      */
     @RequestMapping("/update")
     @RequiresPermissions("pms:pmscommentreplay:update")
-    public R update(@RequestBody PmsCommentReplayEntity pmsCommentReplay){
+    public R update(@RequestBody CommentReplayEntity pmsCommentReplay){
 		pmsCommentReplayService.updateById(pmsCommentReplay);
 
         return R.ok();

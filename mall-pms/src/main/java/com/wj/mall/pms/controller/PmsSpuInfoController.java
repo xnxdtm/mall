@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wj.mall.pms.entity.PmsSpuInfoEntity;
+import com.wj.mall.pms.entity.SpuInfoEntity;
 import com.wj.mall.pms.service.PmsSpuInfoService;
 import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.R;
@@ -49,7 +49,7 @@ public class PmsSpuInfoController {
     @RequestMapping("/info/{id}")
     @RequiresPermissions("pms:pmsspuinfo:info")
     public R info(@PathVariable("id") Long id){
-		PmsSpuInfoEntity pmsSpuInfo = pmsSpuInfoService.getById(id);
+		SpuInfoEntity pmsSpuInfo = pmsSpuInfoService.getById(id);
 
         return R.ok().put("pmsSpuInfo", pmsSpuInfo);
     }
@@ -59,7 +59,7 @@ public class PmsSpuInfoController {
      */
     @RequestMapping("/save")
     @RequiresPermissions("pms:pmsspuinfo:save")
-    public R save(@RequestBody PmsSpuInfoEntity pmsSpuInfo){
+    public R save(@RequestBody SpuInfoEntity pmsSpuInfo){
 		pmsSpuInfoService.save(pmsSpuInfo);
 
         return R.ok();
@@ -70,7 +70,7 @@ public class PmsSpuInfoController {
      */
     @RequestMapping("/update")
     @RequiresPermissions("pms:pmsspuinfo:update")
-    public R update(@RequestBody PmsSpuInfoEntity pmsSpuInfo){
+    public R update(@RequestBody SpuInfoEntity pmsSpuInfo){
 		pmsSpuInfoService.updateById(pmsSpuInfo);
 
         return R.ok();

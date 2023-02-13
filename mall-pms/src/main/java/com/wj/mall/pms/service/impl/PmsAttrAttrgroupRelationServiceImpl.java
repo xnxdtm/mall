@@ -9,18 +9,18 @@ import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.Query;
 
 import com.wj.mall.pms.dao.PmsAttrAttrgroupRelationDao;
-import com.wj.mall.pms.entity.PmsAttrAttrgroupRelationEntity;
+import com.wj.mall.pms.entity.AttrAttrgroupRelationEntity;
 import com.wj.mall.pms.service.PmsAttrAttrgroupRelationService;
 
 
 @Service("pmsAttrAttrgroupRelationService")
-public class PmsAttrAttrgroupRelationServiceImpl extends ServiceImpl<PmsAttrAttrgroupRelationDao, PmsAttrAttrgroupRelationEntity> implements PmsAttrAttrgroupRelationService {
+public class PmsAttrAttrgroupRelationServiceImpl extends ServiceImpl<PmsAttrAttrgroupRelationDao, AttrAttrgroupRelationEntity> implements PmsAttrAttrgroupRelationService {
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        IPage<PmsAttrAttrgroupRelationEntity> page = this.page(
-                new Query<PmsAttrAttrgroupRelationEntity>().getPage(params),
-                new QueryWrapper<PmsAttrAttrgroupRelationEntity>()
+        IPage<AttrAttrgroupRelationEntity> page = this.page(
+                new Query<AttrAttrgroupRelationEntity>().getPage(params),
+                new QueryWrapper<AttrAttrgroupRelationEntity>()
         );
 
         return new PageUtils(page);

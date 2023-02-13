@@ -9,18 +9,18 @@ import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.Query;
 
 import com.wj.mall.pms.dao.PmsSkuSaleAttrValueDao;
-import com.wj.mall.pms.entity.PmsSkuSaleAttrValueEntity;
+import com.wj.mall.pms.entity.SkuSaleAttrValueEntity;
 import com.wj.mall.pms.service.PmsSkuSaleAttrValueService;
 
 
 @Service("pmsSkuSaleAttrValueService")
-public class PmsSkuSaleAttrValueServiceImpl extends ServiceImpl<PmsSkuSaleAttrValueDao, PmsSkuSaleAttrValueEntity> implements PmsSkuSaleAttrValueService {
+public class PmsSkuSaleAttrValueServiceImpl extends ServiceImpl<PmsSkuSaleAttrValueDao, SkuSaleAttrValueEntity> implements PmsSkuSaleAttrValueService {
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        IPage<PmsSkuSaleAttrValueEntity> page = this.page(
-                new Query<PmsSkuSaleAttrValueEntity>().getPage(params),
-                new QueryWrapper<PmsSkuSaleAttrValueEntity>()
+        IPage<SkuSaleAttrValueEntity> page = this.page(
+                new Query<SkuSaleAttrValueEntity>().getPage(params),
+                new QueryWrapper<SkuSaleAttrValueEntity>()
         );
 
         return new PageUtils(page);

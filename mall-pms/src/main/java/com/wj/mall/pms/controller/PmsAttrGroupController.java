@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wj.mall.pms.entity.PmsAttrGroupEntity;
+import com.wj.mall.pms.entity.AttrGroupEntity;
 import com.wj.mall.pms.service.PmsAttrGroupService;
 import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.R;
@@ -49,7 +49,7 @@ public class PmsAttrGroupController {
     @RequestMapping("/info/{attrGroupId}")
     @RequiresPermissions("pms:pmsattrgroup:info")
     public R info(@PathVariable("attrGroupId") Long attrGroupId){
-		PmsAttrGroupEntity pmsAttrGroup = pmsAttrGroupService.getById(attrGroupId);
+		AttrGroupEntity pmsAttrGroup = pmsAttrGroupService.getById(attrGroupId);
 
         return R.ok().put("pmsAttrGroup", pmsAttrGroup);
     }
@@ -59,7 +59,7 @@ public class PmsAttrGroupController {
      */
     @RequestMapping("/save")
     @RequiresPermissions("pms:pmsattrgroup:save")
-    public R save(@RequestBody PmsAttrGroupEntity pmsAttrGroup){
+    public R save(@RequestBody AttrGroupEntity pmsAttrGroup){
 		pmsAttrGroupService.save(pmsAttrGroup);
 
         return R.ok();
@@ -70,7 +70,7 @@ public class PmsAttrGroupController {
      */
     @RequestMapping("/update")
     @RequiresPermissions("pms:pmsattrgroup:update")
-    public R update(@RequestBody PmsAttrGroupEntity pmsAttrGroup){
+    public R update(@RequestBody AttrGroupEntity pmsAttrGroup){
 		pmsAttrGroupService.updateById(pmsAttrGroup);
 
         return R.ok();

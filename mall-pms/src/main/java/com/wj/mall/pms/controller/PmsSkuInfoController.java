@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wj.mall.pms.entity.PmsSkuInfoEntity;
+import com.wj.mall.pms.entity.SkuInfoEntity;
 import com.wj.mall.pms.service.PmsSkuInfoService;
 import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.R;
@@ -49,7 +49,7 @@ public class PmsSkuInfoController {
     @RequestMapping("/info/{skuId}")
     @RequiresPermissions("pms:pmsskuinfo:info")
     public R info(@PathVariable("skuId") Long skuId){
-		PmsSkuInfoEntity pmsSkuInfo = pmsSkuInfoService.getById(skuId);
+		SkuInfoEntity pmsSkuInfo = pmsSkuInfoService.getById(skuId);
 
         return R.ok().put("pmsSkuInfo", pmsSkuInfo);
     }
@@ -59,7 +59,7 @@ public class PmsSkuInfoController {
      */
     @RequestMapping("/save")
     @RequiresPermissions("pms:pmsskuinfo:save")
-    public R save(@RequestBody PmsSkuInfoEntity pmsSkuInfo){
+    public R save(@RequestBody SkuInfoEntity pmsSkuInfo){
 		pmsSkuInfoService.save(pmsSkuInfo);
 
         return R.ok();
@@ -70,7 +70,7 @@ public class PmsSkuInfoController {
      */
     @RequestMapping("/update")
     @RequiresPermissions("pms:pmsskuinfo:update")
-    public R update(@RequestBody PmsSkuInfoEntity pmsSkuInfo){
+    public R update(@RequestBody SkuInfoEntity pmsSkuInfo){
 		pmsSkuInfoService.updateById(pmsSkuInfo);
 
         return R.ok();

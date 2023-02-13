@@ -1,6 +1,6 @@
 package com.wj.mall.pms.dao;
 
-import com.wj.mall.pms.entity.PmsSkuInfoEntity;
+import com.wj.mall.pms.entity.SkuInfoEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -12,6 +12,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @date 2023-02-10 19:52:57
  */
 @Mapper
-public interface PmsSkuInfoDao extends BaseMapper<PmsSkuInfoEntity> {
+public interface PmsSkuInfoDao extends BaseMapper<SkuInfoEntity> {
 	
 }

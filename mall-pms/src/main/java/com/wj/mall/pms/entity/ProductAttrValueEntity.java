@@ -2,21 +2,20 @@ package com.wj.mall.pms.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
- * 属性&属性分组关联
+ * spu属性值
  * 
  * @author wj
  * @email xnxdtm@gmail.com
- * @date 2023-02-10 19:52:52
+ * @date 2023-02-10 19:52:57
  */
 @Data
-@TableName("pms_attr_attrgroup_relation")
-public class PmsAttrAttrgroupRelationEntity implements Serializable {
+@TableName("pms_product_attr_value")
+public class ProductAttrValueEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -25,16 +24,28 @@ public class PmsAttrAttrgroupRelationEntity implements Serializable {
 	@TableId
 	private Long id;
 	/**
+	 * 商品id
+	 */
+	private Long spuId;
+	/**
 	 * 属性id
 	 */
 	private Long attrId;
 	/**
-	 * 属性分组id
+	 * 属性名
 	 */
-	private Long attrGroupId;
+	private String attrName;
 	/**
-	 * 属性组内排序
+	 * 属性值
+	 */
+	private String attrValue;
+	/**
+	 * 顺序
 	 */
 	private Integer attrSort;
+	/**
+	 * 快速展示【是否展示在介绍上；0-否 1-是】
+	 */
+	private Integer quickShow;
 
 }

@@ -1,6 +1,6 @@
 package com.wj.mall.pms.dao;
 
-import com.wj.mall.pms.entity.PmsAttrAttrgroupRelationEntity;
+import com.wj.mall.pms.entity.AttrAttrgroupRelationEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -12,6 +12,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @date 2023-02-10 19:52:52
  */
 @Mapper
-public interface PmsAttrAttrgroupRelationDao extends BaseMapper<PmsAttrAttrgroupRelationEntity> {
+public interface PmsAttrAttrgroupRelationDao extends BaseMapper<AttrAttrgroupRelationEntity> {
 	
 }

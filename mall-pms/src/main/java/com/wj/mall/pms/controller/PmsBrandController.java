@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wj.mall.pms.entity.PmsBrandEntity;
+import com.wj.mall.pms.entity.BrandEntity;
 import com.wj.mall.pms.service.PmsBrandService;
 import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.R;
@@ -49,7 +49,7 @@ public class PmsBrandController {
     @RequestMapping("/info/{brandId}")
     @RequiresPermissions("pms:pmsbrand:info")
     public R info(@PathVariable("brandId") Long brandId){
-		PmsBrandEntity pmsBrand = pmsBrandService.getById(brandId);
+		BrandEntity pmsBrand = pmsBrandService.getById(brandId);
 
         return R.ok().put("pmsBrand", pmsBrand);
     }
@@ -59,7 +59,7 @@ public class PmsBrandController {
      */
     @RequestMapping("/save")
     @RequiresPermissions("pms:pmsbrand:save")
-    public R save(@RequestBody PmsBrandEntity pmsBrand){
+    public R save(@RequestBody BrandEntity pmsBrand){
 		pmsBrandService.save(pmsBrand);
 
         return R.ok();
@@ -70,7 +70,7 @@ public class PmsBrandController {
      */
     @RequestMapping("/update")
     @RequiresPermissions("pms:pmsbrand:update")
-    public R update(@RequestBody PmsBrandEntity pmsBrand){
+    public R update(@RequestBody BrandEntity pmsBrand){
 		pmsBrandService.updateById(pmsBrand);
 
         return R.ok();

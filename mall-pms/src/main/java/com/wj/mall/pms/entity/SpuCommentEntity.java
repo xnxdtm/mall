@@ -16,7 +16,7 @@ import lombok.Data;
  */
 @Data
 @TableName("pms_spu_comment")
-public class PmsSpuCommentEntity implements Serializable {
+public class SpuCommentEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**

@@ -2,7 +2,7 @@ package com.wj.mall.pms.controller;
 
 import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.R;
-import com.wj.mall.pms.entity.PmsAttrEntity;
+import com.wj.mall.pms.entity.AttrEntity;
 import com.wj.mall.pms.service.PmsAttrService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +44,7 @@ public class PmsAttrController {
     @RequestMapping("/info/{attrId}")
     @RequiresPermissions("pms:pmsattr:info")
     public R info(@PathVariable("attrId") Long attrId){
-		PmsAttrEntity pmsAttr = pmsAttrService.getById(attrId);
+		AttrEntity pmsAttr = pmsAttrService.getById(attrId);
 
         return R.ok().put("pmsAttr", pmsAttr);
     }
@@ -54,7 +54,7 @@ public class PmsAttrController {
      */
     @RequestMapping("/save")
     @RequiresPermissions("pms:pmsattr:save")
-    public R save(@RequestBody PmsAttrEntity pmsAttr){
+    public R save(@RequestBody AttrEntity pmsAttr){
 		pmsAttrService.save(pmsAttr);
 
         return R.ok();
@@ -65,7 +65,7 @@ public class PmsAttrController {
      */
     @RequestMapping("/update")
     @RequiresPermissions("pms:pmsattr:update")
-    public R update(@RequestBody PmsAttrEntity pmsAttr){
+    public R update(@RequestBody AttrEntity pmsAttr){
 		pmsAttrService.updateById(pmsAttr);
 
         return R.ok();

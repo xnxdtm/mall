@@ -1,6 +1,6 @@
 package com.wj.mall.pms.dao;
 
-import com.wj.mall.pms.entity.PmsCategoryBrandRelationEntity;
+import com.wj.mall.pms.entity.CategoryBrandRelationEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -12,6 +12,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @date 2023-02-10 19:52:57
  */
 @Mapper
-public interface PmsCategoryBrandRelationDao extends BaseMapper<PmsCategoryBrandRelationEntity> {
+public interface PmsCategoryBrandRelationDao extends BaseMapper<CategoryBrandRelationEntity> {
 	
 }

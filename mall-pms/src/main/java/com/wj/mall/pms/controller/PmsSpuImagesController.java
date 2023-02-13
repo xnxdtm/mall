@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wj.mall.pms.entity.PmsSpuImagesEntity;
+import com.wj.mall.pms.entity.SpuImagesEntity;
 import com.wj.mall.pms.service.PmsSpuImagesService;
 import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.R;
@@ -49,7 +49,7 @@ public class PmsSpuImagesController {
     @RequestMapping("/info/{id}")
     @RequiresPermissions("pms:pmsspuimages:info")
     public R info(@PathVariable("id") Long id){
-		PmsSpuImagesEntity pmsSpuImages = pmsSpuImagesService.getById(id);
+		SpuImagesEntity pmsSpuImages = pmsSpuImagesService.getById(id);
 
         return R.ok().put("pmsSpuImages", pmsSpuImages);
     }
@@ -59,7 +59,7 @@ public class PmsSpuImagesController {
      */
     @RequestMapping("/save")
     @RequiresPermissions("pms:pmsspuimages:save")
-    public R save(@RequestBody PmsSpuImagesEntity pmsSpuImages){
+    public R save(@RequestBody SpuImagesEntity pmsSpuImages){
 		pmsSpuImagesService.save(pmsSpuImages);
 
         return R.ok();
@@ -70,7 +70,7 @@ public class PmsSpuImagesController {
      */
     @RequestMapping("/update")
     @RequiresPermissions("pms:pmsspuimages:update")
-    public R update(@RequestBody PmsSpuImagesEntity pmsSpuImages){
+    public R update(@RequestBody SpuImagesEntity pmsSpuImages){
 		pmsSpuImagesService.updateById(pmsSpuImages);
 
         return R.ok();

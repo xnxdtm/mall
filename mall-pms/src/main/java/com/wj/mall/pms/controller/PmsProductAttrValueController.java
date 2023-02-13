@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wj.mall.pms.entity.PmsProductAttrValueEntity;
+import com.wj.mall.pms.entity.ProductAttrValueEntity;
 import com.wj.mall.pms.service.PmsProductAttrValueService;
 import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.R;
@@ -49,7 +49,7 @@ public class PmsProductAttrValueController {
     @RequestMapping("/info/{id}")
     @RequiresPermissions("pms:pmsproductattrvalue:info")
     public R info(@PathVariable("id") Long id){
-		PmsProductAttrValueEntity pmsProductAttrValue = pmsProductAttrValueService.getById(id);
+		ProductAttrValueEntity pmsProductAttrValue = pmsProductAttrValueService.getById(id);
 
         return R.ok().put("pmsProductAttrValue", pmsProductAttrValue);
     }
@@ -59,7 +59,7 @@ public class PmsProductAttrValueController {
      */
     @RequestMapping("/save")
     @RequiresPermissions("pms:pmsproductattrvalue:save")
-    public R save(@RequestBody PmsProductAttrValueEntity pmsProductAttrValue){
+    public R save(@RequestBody ProductAttrValueEntity pmsProductAttrValue){
 		pmsProductAttrValueService.save(pmsProductAttrValue);
 
         return R.ok();
@@ -70,7 +70,7 @@ public class PmsProductAttrValueController {
      */
     @RequestMapping("/update")
     @RequiresPermissions("pms:pmsproductattrvalue:update")
-    public R update(@RequestBody PmsProductAttrValueEntity pmsProductAttrValue){
+    public R update(@RequestBody ProductAttrValueEntity pmsProductAttrValue){
 		pmsProductAttrValueService.updateById(pmsProductAttrValue);
 
         return R.ok();

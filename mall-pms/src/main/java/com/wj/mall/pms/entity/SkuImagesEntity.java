@@ -15,7 +15,7 @@ import java.io.Serializable;
  */
 @Data
 @TableName("pms_sku_images")
-public class PmsSkuImagesEntity implements Serializable {
+public class SkuImagesEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**

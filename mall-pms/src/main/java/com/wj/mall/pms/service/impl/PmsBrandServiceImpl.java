@@ -9,18 +9,18 @@ import com.wj.mall.common.utils.PageUtils;
 import com.wj.mall.common.utils.Query;
 
 import com.wj.mall.pms.dao.PmsBrandDao;
-import com.wj.mall.pms.entity.PmsBrandEntity;
+import com.wj.mall.pms.entity.BrandEntity;
 import com.wj.mall.pms.service.PmsBrandService;
 
 
 @Service("pmsBrandService")
-public class PmsBrandServiceImpl extends ServiceImpl<PmsBrandDao, PmsBrandEntity> implements PmsBrandService {
+public class PmsBrandServiceImpl extends ServiceImpl<PmsBrandDao, BrandEntity> implements PmsBrandService {
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        IPage<PmsBrandEntity> page = this.page(
-                new Query<PmsBrandEntity>().getPage(params),
-                new QueryWrapper<PmsBrandEntity>()
+        IPage<BrandEntity> page = this.page(
+                new Query<BrandEntity>().getPage(params),
+                new QueryWrapper<BrandEntity>()
         );
 
         return new PageUtils(page);
