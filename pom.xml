@@ -22,6 +22,8 @@
         <module>mall-sms</module>
         <module>mall-ums</module>
         <module>mall-wms</module>
+        <module>mall-gateway</module>
+        <module>renren-fast</module>
     </modules>
 
     <build>
